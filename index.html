@@ -99,12 +99,21 @@
         opacity: 0;
       }
     }
+
+    .button-container {
+      display: flex;
+      gap: 20px;
+      position: relative;
+    }
   </style>
 </head>
 <body>
   <h1>💙I love you Khalid💙</h1>
-  <button class="btn" id="yes" onclick="correctAnswer()">I love you too</button>
-  <button class="btn" id="no">I don’t love you</button>
+
+  <div class="button-container">
+    <button class="btn" id="yes" onclick="correctAnswer()">I love you too</button>
+    <button class="btn" id="no">I don’t love you</button>
+  </div>
 
   <script>
     function correctAnswer() {
@@ -113,8 +122,13 @@
 
     const noBtn = document.getElementById('no');
     noBtn.addEventListener('mouseover', () => {
-      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
-      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+      const container = document.querySelector('.button-container');
+      const containerRect = container.getBoundingClientRect();
+      const maxX = container.clientWidth - noBtn.offsetWidth;
+      const maxY = container.clientHeight - noBtn.offsetHeight;
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
       noBtn.style.left = `${x}px`;
       noBtn.style.top = `${y}px`;
     });
