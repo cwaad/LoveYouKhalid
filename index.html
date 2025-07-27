@@ -22,6 +22,7 @@
       color: #4682b4;
       margin-bottom: 40px;
       animation: pulse 2s infinite;
+      font-family: 'Arial', sans-serif; /* Changed the font here */
     }
 
     @keyframes pulse {
@@ -36,15 +37,12 @@
       border: none;
       border-radius: 20px;
       cursor: pointer;
-      transition: none;
-      position: absolute; /* لجعل الزر يتحرك */
+      transition: all 0.3s ease;
     }
 
     #yes {
       background-color: #4682b4;
       color: white;
-      right: 50px;
-      bottom: 80px;
     }
 
     #yes:hover {
@@ -54,9 +52,7 @@
     #no {
       background-color: #f1f1f1;
       color: #444;
-      left: 50px;
-      bottom: 80px;
-      transition: none !important; /* إزالة تأثير التكبير */
+      position: absolute;
     }
 
     .heart {
@@ -108,7 +104,6 @@
 </head>
 <body>
   <h1>💙I love you Khalid💙</h1>
-
   <button class="btn" id="yes" onclick="correctAnswer()">I love you too</button>
   <button class="btn" id="no">I don’t love you</button>
 
@@ -119,14 +114,13 @@
 
     const noBtn = document.getElementById('no');
     noBtn.addEventListener('mouseover', () => {
-      // هنا بنحدد مكان الزر "no" بدون تغيير حجمه
       const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
       const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
-      noBtn.style.left = ${x}px;
-      noBtn.style.top = ${y}px;
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
     });
 
-    // قلوب تطير
+    // Generate floating hearts
     for (let i = 0; i < 25; i++) {
       const heart = document.createElement('div');
       heart.className = 'heart';
