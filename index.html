@@ -12,15 +12,15 @@
       height: 100vh;
       overflow: hidden;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
     }
 
     h1 {
       font-size: 64px;
       color: #4682b4;
-      margin-bottom: 60px;
+      margin-bottom: 40px;
       animation: pulse 2s infinite;
     }
 
@@ -32,6 +32,7 @@
     .btn {
       font-size: 24px;
       padding: 14px 32px;
+      margin: 12px;
       border: none;
       border-radius: 20px;
       cursor: pointer;
@@ -98,24 +99,12 @@
         opacity: 0;
       }
     }
-
-    .button-wrapper {
-      width: 100%;
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-      padding: 0 60px;
-      box-sizing: border-box;
-    }
   </style>
 </head>
 <body>
   <h1>💙I love you Khalid💙</h1>
-
-  <div class="button-wrapper">
-    <button class="btn" id="yes" onclick="correctAnswer()">I love you too</button>
-    <button class="btn" id="no">I don’t love you</button>
-  </div>
+  <button class="btn" id="yes" onclick="correctAnswer()">I love you too</button>
+  <button class="btn" id="no">I don’t love you</button>
 
   <script>
     function correctAnswer() {
@@ -126,10 +115,11 @@
     noBtn.addEventListener('mouseover', () => {
       const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
       const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
-      noBtn.style.left = `${x}px`;
-      noBtn.style.top = `${y}px`;
+      noBtn.style.left = ${x}px;
+      noBtn.style.top = ${y}px;
     });
 
+    // Generate floating hearts
     for (let i = 0; i < 25; i++) {
       const heart = document.createElement('div');
       heart.className = 'heart';
