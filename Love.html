@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I Love You</title>
+  <style>
+    body {
+      background-color: #a3d5ff;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    h1 {
+      font-size: 40px;
+      color: #003366;
+    }
+
+    .btn {
+      font-size: 22px;
+      padding: 12px 28px;
+      margin: 20px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #yes {
+      background-color: #004c99;
+      color: white;
+    }
+
+    #no {
+      background-color: #e0e0e0;
+      color: black;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <h1>I love you,</h1>
+  <button class="btn" id="yes" onclick="correctAnswer()">I love you too</button>
+  <button class="btn" id="no">I don’t love you</button>
+
+  <script>
+    function correctAnswer() {
+      alert("🌟Correct answer🌟");
+    }
+
+    const noBtn = document.getElementById('no');
+    noBtn.addEventListener('mouseover', function () {
+      const x = Math.floor(Math.random() * (window.innerWidth - 150));
+      const y = Math.floor(Math.random() * (window.innerHeight - 80));
+      noBtn.style.left = x + 'px';
+      noBtn.style.top = y + 'px';
+    });
+  </script>
+</body>
+</html>
